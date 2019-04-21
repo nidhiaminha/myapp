@@ -95,7 +95,7 @@ class App extends Component {
       totalToGo = ((this.state.avgOrderNumber * (this.state.percentageToGO / 100) * 0.2
       )); 
       //percentage that mojo takes and set the precision to 2 digits
-      result = roundTo((totalToGo * this.state.avgOrderAmount * 0.08)); 
+      result = roundTo((totalToGo * this.state.avgOrderAmount * 0.08),2); 
       this.setState({
         calculated: result
       });
@@ -148,6 +148,9 @@ class App extends Component {
                   <InputAdornment position="start">#</InputAdornment>
                 ) 
               }}
+            //   onInput = {(e) =>{
+            //     e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,5)
+            // }}
             />
           </div>
           <div id="percent-togo-div">
